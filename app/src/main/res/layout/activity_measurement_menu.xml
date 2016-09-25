@@ -2,8 +2,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#0099cc"
-    tools:context="piotrek.projektinzynierski.MainMenu">
+    android:background="@color/green"
+    tools:context="piotrek.projektinzynierski.measurement_menu">
 
     <!-- The primary full-screen view. This can be replaced with whatever view
          is needed to present your content, e.g. VideoView, SurfaceView,
@@ -14,7 +14,6 @@
         android:layout_height="match_parent"
         android:gravity="center"
         android:keepScreenOn="true"
-        android:text="@string/dummy_content"
         android:textColor="#33b5e5"
         android:textSize="50sp"
         android:textStyle="bold" />
@@ -42,10 +41,35 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Pomiar"
-            android:id="@+id/button_measurement_menu"
+            android:text="Zacznij pomiar"
+            android:id="@+id/button_start_measurement"
             android:layout_gravity="center"
-            android:onClick="goToMeasurementMenu"/>
+            android:onClick="startMeasurement" />
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="106dp"
+            android:layout_gravity="left|top"
+            android:orientation="vertical">
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="New RadioButton"
+                android:id="@+id/radioButton" />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="New RadioButton"
+                android:id="@+id/radioButton2" />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="New RadioButton"
+                android:id="@+id/radioButton3" />
+        </RadioGroup>
     </FrameLayout>
 
 </FrameLayout>

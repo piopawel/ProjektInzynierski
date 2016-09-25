@@ -1,20 +1,19 @@
 package piotrek.projektinzynierski;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.MotionEvent;
 import android.view.View;
-import android.widget.EditText;
-import android.content.Intent;
 
 /**
  * An example full-screen activity that shows and hides the system UI (i.e.
  * status bar and navigation/system bar) with user interaction.
  */
-public class MainMenu extends AppCompatActivity {
+public class MeasurementMenu extends AppCompatActivity {
     /**
      * Whether or not the system UI should be auto-hidden after
      * {@link #AUTO_HIDE_DELAY_MILLIS} milliseconds.
@@ -25,7 +24,7 @@ public class MainMenu extends AppCompatActivity {
      * If {@link #AUTO_HIDE} is set, the number of milliseconds to wait after
      * user interaction before hiding the system UI.
      */
-    private static final int AUTO_HIDE_DELAY_MILLIS = 3000;
+    private static final int AUTO_HIDE_DELAY_MILLIS = 3;
 
     /**
      * Some older devices needs a small delay between UI widget updates
@@ -89,7 +88,7 @@ public class MainMenu extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.activity_main_menu);
+        setContentView(R.layout.activity_measurement_menu);
 
         mVisible = true;
         mControlsView = findViewById(R.id.fullscreen_content_controls);
@@ -106,7 +105,7 @@ public class MainMenu extends AppCompatActivity {
 
         // Upon interacting with UI controls, delay any scheduled hide()
         // operations to prevent the jarring behavior of controls going away
-        // while interacting with the UI./*
+        // while interacting with the UI.
         /*findViewById(R.id.dummy_button).setOnTouchListener(mDelayHideTouchListener);*/
     }
 
@@ -163,11 +162,8 @@ public class MainMenu extends AppCompatActivity {
         mHideHandler.postDelayed(mHideRunnable, delayMillis);
     }
 
-    public void goToMeasurementMenu(View view){
-        Intent intent = new Intent(this, MeasurementMenu.class);
-        /*EditText editText = (EditText) findViewById(R.id.edit_message);
-        String message = editText.getText().toString();
-        intent.putExtra(EXTRA_MESSAGE, message);*/
+    public void startMeasurement(View view){
+        Intent intent = new Intent(this, Measurement.class);
         startActivity(intent);
     }
 }

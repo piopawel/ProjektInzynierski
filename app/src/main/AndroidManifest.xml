@@ -2,6 +2,13 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="piotrek.projektinzynierski">
 
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-feature android:name="android.hardware.camera.level.full" />
+    <!--<uses-feature android:name="android.hardware.camera2.full" />-->
+    <!--<uses-feature android:name="android.hardware.camera"-->
+        <!--android:required="true" />-->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -19,6 +26,16 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".MeasurementMenu"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/title_activity_measurement_menu"
+            android:theme="@style/FullscreenTheme" />
+        <activity
+            android:name=".Measurement"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/title_activity_measurement"
+            android:theme="@style/FullscreenTheme"></activity>
     </application>
 
 </manifest>
