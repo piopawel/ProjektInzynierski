@@ -23,7 +23,7 @@
          android:fitsSystemWindows. -->
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="559dp"
         android:fitsSystemWindows="true">
 
         <LinearLayout
@@ -44,8 +44,21 @@
             android:layout_height="wrap_content"
             android:text="Pomiar"
             android:id="@+id/button_measurement_menu"
-            android:layout_gravity="center"
+            android:layout_gravity="center_horizontal|bottom"
             android:onClick="goToMeasurementMenu"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageView"
+            android:layout_gravity="right|bottom"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Zdjeciezabawsie"
+            android:id="@+id/buttonx"
+            android:layout_gravity="left|top" />
     </FrameLayout>
 
 </FrameLayout>

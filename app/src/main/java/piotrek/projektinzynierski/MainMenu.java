@@ -1,20 +1,36 @@
 package piotrek.projektinzynierski;
 
 import android.annotation.SuppressLint;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.os.Environment;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.content.Intent;
+import android.widget.ImageView;
+import org.opencv.*;
+import org.opencv.android.OpenCVLoader;
+import org.opencv.android.Utils;
+import org.opencv.core.Mat;
+import org.opencv.imgcodecs.Imgcodecs;
+import org.opencv.imgproc.Imgproc;
+
+import java.io.File;
 
 /**
  * An example full-screen activity that shows and hides the system UI (i.e.
  * status bar and navigation/system bar) with user interaction.
  */
 public class MainMenu extends AppCompatActivity {
+
+
     /**
      * Whether or not the system UI should be auto-hidden after
      * {@link #AUTO_HIDE_DELAY_MILLIS} milliseconds.
@@ -85,12 +101,17 @@ public class MainMenu extends AppCompatActivity {
         }
     };
 
+    String sourceFile = Environment.getExternalStorageDirectory().getPath()+"/Pictures/test.jpg";
+    File imgFile = new  File(sourceFile);
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_main_menu);
-
+        if(!OpenCVLoader.initDebug()){
+            finish();
+        }
         mVisible = true;
         mControlsView = findViewById(R.id.fullscreen_content_controls);
         mContentView = findViewById(R.id.fullscreen_content);
@@ -101,6 +122,25 @@ public class MainMenu extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 toggle();
+            }
+        });
+
+
+        Button edycja = (Button) findViewById(R.id.buttonx);
+        edycja.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Bitmap myBitmap = BitmapFactory.decodeFile(imgFile.getAbsolutePath());
+
+                Mat imageColor = Imgcodecs.imread(sourceFile);
+                Mat imageGrayScale = new Mat();
+                Mat imageThresholded = new Mat();
+                Imgproc.cvtColor(imageColor, imageGrayScale, Imgproc.COLOR_RGB2GRAY);
+                Imgproc.threshold(imageGrayScale,imageThresholded,60,255,Imgproc.THRESH_BINARY);
+                Bitmap myBitmap = Bitmap.createBitmap(imageGrayScale.width(),imageGrayScale.height(), Bitmap.Config.ARGB_8888);
+                Utils.matToBitmap(imageThresholded, myBitmap);
+                ImageView myImage = (ImageView) findViewById(R.id.imageView);
+                myImage.setImageBitmap(myBitmap);
             }
         });
 
@@ -170,4 +210,6 @@ public class MainMenu extends AppCompatActivity {
         intent.putExtra(EXTRA_MESSAGE, message);*/
         startActivity(intent);
     }
+
+
 }
