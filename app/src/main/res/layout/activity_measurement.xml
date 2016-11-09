@@ -5,22 +5,13 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="com.inducesmile.androidcameraapi2.AndroidCameraApi">
-    <TextureView
-        android:id="@+id/texture"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/button_start_measurement"
-        android:layout_alignParentTop="true"/>
-    <Button
-        android:id="@+id/button_start_measurement"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="16dp"
-        android:layout_marginTop="16dp"
-        android:text="Zacznij pomiar" />
 
-    <Chronometer
+    <!--<TextureView
+            android:id="@+id/texture"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true" />-->
+    <!--<Chronometer
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/chronometer"
@@ -28,15 +19,154 @@
         android:textColor="#ff0000"
         android:textSize="25dp"
         android:visibility="invisible"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true" />-->
+
+    <!--<SeekBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/seekBar"
+        android:layout_alignTop="@+id/button_flash"
+        android:layout_alignBottom="@+id/button_flash"
+        android:indeterminate="false"
+        android:max="10"
+        android:progress="1"
+        android:layout_toStartOf="@+id/button_flash" />
 
     <Button
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="100dp"
         android:text="flash"
         android:id="@+id/button_flash"
-        android:layout_alignTop="@+id/button_start_measurement"
-        android:layout_toEndOf="@+id/button_start_measurement" />
+        android:layout_alignParentBottom="true"
+        android:layout_alignEnd="@+id/chronometer" />
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_alignParentStart="true"
+        android:layout_toStartOf="@+id/seekBar"
+        android:layout_alignTop="@+id/seekBar"
+        android:weightSum="1">
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Seria impulsów"
+            android:id="@+id/series"
+            android:layout_weight="1" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Jeden"
+            android:id="@+id/one" />
+
+
+    </RadioGroup>-->
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:weightSum="100">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:layout_weight="20">
+            <TextureView
+                android:id="@+id/texture"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentTop="true"/>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/imageView2"
+                android:layout_gravity="left|center_vertical" />
+        </FrameLayout>
+
+
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="80"
+            android:background="#000000">
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Seria"
+                android:id="@+id/series"
+                android:layout_row="0"
+                android:layout_column="0"
+                android:layout_rowSpan="1"
+                android:layout_rowWeight="1"
+                android:checked="true"
+                android:buttonTint="#00ff00"
+                android:allowUndo="true"
+                android:textColor="#ffffff" />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Jeden"
+                android:id="@+id/one"
+                android:layout_row="1"
+                android:layout_column="0"
+                android:layout_rowSpan="1"
+                android:layout_rowWeight="1"
+                android:textColor="#ffffff"
+                android:buttonTint="#00ff00" />
+
+            <SeekBar
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/seekBar"
+                android:layout_row="1"
+                android:layout_column="1"
+                android:layout_rowWeight="1"
+                android:layout_columnSpan="3"
+                android:layout_columnWeight="1"
+                android:max="50"
+                android:progress="0"
+                android:indeterminate="false"
+                android:minWidth="100dp"
+                android:nestedScrollingEnabled="false"
+                android:mirrorForRtl="false"
+                android:splitTrack="false" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0.0s"
+                android:id="@+id/seconds"
+                android:layout_row="1"
+                android:layout_column="4"
+                android:layout_rowWeight="1"
+                android:textColor="#ffffff" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Flash"
+                android:id="@+id/button_flash"
+                android:layout_row="0"
+                android:layout_column="5"
+                android:layout_rowSpan="2"
+                android:background="#444444"
+                android:textColor="#ffffff" />
+
+        </GridLayout>
+    </LinearLayout>
 
 </RelativeLayout>
 
