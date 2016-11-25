@@ -6,64 +6,6 @@
     android:orientation="vertical"
     tools:context="com.inducesmile.androidcameraapi2.AndroidCameraApi">
 
-    <!--<TextureView
-            android:id="@+id/texture"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_alignParentTop="true" />-->
-    <!--<Chronometer
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/chronometer"
-        android:layout_alignBottom="@+id/texture"
-        android:textColor="#ff0000"
-        android:textSize="25dp"
-        android:visibility="invisible"
-        android:layout_alignParentEnd="true" />-->
-
-    <!--<SeekBar
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/seekBar"
-        android:layout_alignTop="@+id/button_flash"
-        android:layout_alignBottom="@+id/button_flash"
-        android:indeterminate="false"
-        android:max="10"
-        android:progress="1"
-        android:layout_toStartOf="@+id/button_flash" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="100dp"
-        android:text="flash"
-        android:id="@+id/button_flash"
-        android:layout_alignParentBottom="true"
-        android:layout_alignEnd="@+id/chronometer" />
-
-    <RadioGroup
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:layout_alignParentStart="true"
-        android:layout_toStartOf="@+id/seekBar"
-        android:layout_alignTop="@+id/seekBar"
-        android:weightSum="1">
-
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Seria impulsów"
-            android:id="@+id/series"
-            android:layout_weight="1" />
-
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Jeden"
-            android:id="@+id/one" />
-
-
-    </RadioGroup>-->
 
 
     <LinearLayout
@@ -79,7 +21,7 @@
             android:layout_height="match_parent"
             android:layout_alignParentBottom="true"
             android:layout_alignParentStart="true"
-            android:layout_weight="20">
+            android:layout_weight="15">
             <TextureView
                 android:id="@+id/texture"
                 android:layout_width="match_parent"
@@ -98,34 +40,8 @@
         <GridLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="80"
+            android:layout_weight="85"
             android:background="#000000">
-
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Seria"
-                android:id="@+id/series"
-                android:layout_row="0"
-                android:layout_column="0"
-                android:layout_rowSpan="1"
-                android:layout_rowWeight="1"
-                android:checked="true"
-                android:buttonTint="#00ff00"
-                android:allowUndo="true"
-                android:textColor="#ffffff" />
-
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Jeden"
-                android:id="@+id/one"
-                android:layout_row="1"
-                android:layout_column="0"
-                android:layout_rowSpan="1"
-                android:layout_rowWeight="1"
-                android:textColor="#ffffff"
-                android:buttonTint="#00ff00" />
 
             <SeekBar
                 android:layout_width="wrap_content"
@@ -133,26 +49,71 @@
                 android:id="@+id/seekBar"
                 android:layout_row="1"
                 android:layout_column="1"
-                android:layout_rowWeight="1"
                 android:layout_columnSpan="3"
                 android:layout_columnWeight="1"
                 android:max="50"
-                android:progress="0"
+                android:progress="20"
                 android:indeterminate="false"
                 android:minWidth="100dp"
                 android:nestedScrollingEnabled="false"
                 android:mirrorForRtl="false"
-                android:splitTrack="false" />
+                android:splitTrack="false"
+                android:layout_rowWeight="1" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="0.0s"
+                android:text="2.0s"
                 android:id="@+id/seconds"
                 android:layout_row="1"
                 android:layout_column="4"
-                android:layout_rowWeight="1"
-                android:textColor="#ffffff" />
+                android:textColor="#ffffff"
+                android:layout_rowWeight="1" />
+
+            <RadioGroup
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_row="0"
+                android:layout_column="0"
+                android:layout_rowSpan="2">
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Seria"
+                    android:id="@+id/seriesFlash"
+                    android:layout_row="0"
+                    android:layout_column="0"
+                    android:layout_rowSpan="1"
+                    android:layout_rowWeight="1"
+                    android:checked="true"
+                    android:buttonTint="#00ff00"
+                    android:allowUndo="false"
+                    android:textColor="#ffffff"
+                    android:layout_weight="1" />
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Jeden"
+                    android:id="@+id/oneFlash"
+                    android:layout_row="1"
+                    android:layout_column="0"
+                    android:layout_rowSpan="1"
+                    android:layout_rowWeight="1"
+                    android:textColor="#ffffff"
+                    android:buttonTint="#00ff00"
+                    android:layout_weight="1" />
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="nothing"
+                android:id="@+id/justifyingLabel"
+                android:layout_row="0"
+                android:layout_column="3"
+                android:layout_rowWeight="1" />
 
             <Button
                 android:layout_width="wrap_content"

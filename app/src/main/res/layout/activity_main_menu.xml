@@ -7,14 +7,6 @@
     android:weightSum="100"
     tools:context="piotrek.projektinzynierski.MainMenu">
 
-    <!-- The primary full-screen view. This can be replaced with whatever view
-         is needed to present your content, e.g. VideoView, SurfaceView,
-         TextureView, etc. -->
-
-    <!-- This FrameLayout insets its children based on system windows using
-         android:fitsSystemWindows. -->
-
-
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -29,7 +21,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="To jest tekst pomocy"
+        android:text="To jest tekst pomocy. TODO..."
         android:id="@+id/help_textView"
         android:layout_weight="1"
         android:textColor="#ffffff"
