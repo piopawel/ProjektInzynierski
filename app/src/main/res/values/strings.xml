@@ -7,4 +7,13 @@
     <string name="title_activity_measurement_menu">measurement_menu</string>
 
     <string name="title_activity_measurement">Measurement</string>
+    <string name="help_text">Aplikacja służy do łatwego pomiaru zmian wielkości źrenicy w odpowiedzi na pobudzenie świetlne.\n
+Program pozwala na sterowanie lampą błyskową. Do tego celu służą w oknie pomiarowym zostało stworzone specjalne menu.\n
+Znajdują się w nim dwa przyciski służące do wyboru trybu pracy flasha:\n
+- seria krótkich błysków,\n
+- jeden długi, z długością zadaną przez użytkownika.\n
+Długość błysku jest sterowana poprzez slider, znajdujący się obok wyboru, jej wartość jest wyświetlana na etykiecie obok.\n
+Flash jest włączany przysiskiem "Flash".\n
+\n
+Dla bezpieczeństwa badanego należy nakleić na lampę błyskową taśmę, aby zmniejszyć siłę błysku.</string>
 </resources>

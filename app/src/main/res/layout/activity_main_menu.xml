@@ -10,22 +10,22 @@
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Pomiar"
+            android:text="Przejdź do pomiaru"
             android:id="@+id/button_measurement_menu"
             android:layout_gravity="left|top"
             android:onClick="goToMeasurement"
             android:background="#444444"
             android:textColor="#ffffff"
-            android:layout_weight="10" />
+            android:layout_weight="1" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="To jest tekst pomocy. TODO..."
+        android:text="@string/help_text"
         android:id="@+id/help_textView"
         android:layout_weight="1"
         android:textColor="#ffffff"
-        android:textSize="20dp" />
+        android:textSize="18dp" />
 
 
 </LinearLayout>
